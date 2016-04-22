@@ -11,6 +11,9 @@ all: iosutil
 iosutil: $(OBJS)
 	$(CC) -o $@ $^ $(LDFLAGS)
 
+install: iosutil
+	cp ./iosutil /usr/local/bin
+
 %.o: %.cpp $(DEPS)
 	$(CC) -g -c -o $@ $< $(CPPFLAGS)
 
